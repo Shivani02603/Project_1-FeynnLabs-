@@ -1,25 +1,3 @@
-#!/usr/bin/env python3
-"""
-Telangana Agricultural Supply Chain Analysis
-Micro-Supply Chain for Rural Producers Project
-
-This script performs comprehensive analysis on agricultural market data:
-1. EDA - Exploratory Data Analysis
-2. Visualizations - Price trends and seasonal patterns
-3. ML - Random Forest price prediction
-4. Results - Buy/sell recommendations for farmers
-
-Usage: python3 telangana_ml.py
-
-Required packages:
-pip install pandas scikit-learn matplotlib seaborn
-
-Or with virtual environment:
-python3 -m venv venv
-source venv/bin/activate
-pip install pandas scikit-learn matplotlib seaborn
-python3 telangana_ml.py
-"""
 
 # Check for required packages
 import sys
@@ -33,9 +11,9 @@ for package in required_packages:
         missing_packages.append(package)
 
 if missing_packages:
-    print("❌ Missing required packages:", ', '.join(missing_packages))
-    print("📦 Install with: pip install pandas scikit-learn matplotlib seaborn")
-    print("🔧 Or create virtual environment:")
+    print("Missing required packages:", ', '.join(missing_packages))
+    print("Install with: pip install pandas scikit-learn matplotlib seaborn")
+    print("Or create virtual environment:")
     print("   python3 -m venv venv")
     print("   source venv/bin/activate")
     print("   pip install pandas scikit-learn matplotlib seaborn")
@@ -414,8 +392,8 @@ class TelanganaSupplyChainAnalysis:
         
     def run_complete_analysis(self):
         """Run the complete analysis pipeline."""
-        print("🌾 TELANGANA AGRICULTURAL SUPPLY CHAIN ANALYSIS")
-        print("📊 Micro-Supply Chain for Rural Producers Project")
+        print("TELANGANA AGRICULTURAL SUPPLY CHAIN ANALYSIS")
+        print("Micro-Supply Chain for Rural Producers Project")
         print("=" * 80)
         
         try:
@@ -438,8 +416,8 @@ class TelanganaSupplyChainAnalysis:
             recommendations = self.generate_recommendations(ml_df)
             
             print("\n" + "=" * 80)
-            print("✅ ANALYSIS COMPLETED SUCCESSFULLY!")
-            print("📁 Files generated:")
+            print("ANALYSIS COMPLETED SUCCESSFULLY!")
+            print("Files generated:")
             print("   • telangana_market_analysis.png - Comprehensive visualizations")
             print("   • telangana_recommendations.csv - Buy/sell recommendations")
             print("=" * 80)
@@ -452,7 +430,7 @@ class TelanganaSupplyChainAnalysis:
             }
             
         except Exception as e:
-            print(f"❌ Error during analysis: {str(e)}")
+            print(f"Error during analysis: {str(e)}")
             raise
 
 
@@ -465,17 +443,17 @@ def main():
         analysis = TelanganaSupplyChainAnalysis(csv_file)
         results = analysis.run_complete_analysis()
         
-        print("\n🎯 KEY INSIGHTS FOR FARMERS:")
+        print("\nKEY INSIGHTS FOR FARMERS:")
         print("1. Use the price predictions to plan when to sell crops")
         print("2. Monitor volatile commodities for quick profit opportunities")
         print("3. Check weekly recommendations for optimal trading decisions")
         print("4. Consider seasonal patterns when planning crop cycles")
         
     except FileNotFoundError:
-        print(f"❌ Error: Could not find '{csv_file}'")
+        print(f"Error: Could not find '{csv_file}'")
         print("Please ensure the CSV file is in the same directory as this script.")
     except Exception as e:
-        print(f"❌ Unexpected error: {str(e)}")
+        print(f"Unexpected error: {str(e)}")
 
 
 if __name__ == "__main__":
